@@ -32,7 +32,7 @@ jobs:
 
       # Step 4: Select the Pulumi stack
       - name: Select Pulumi Stack
-        run: pulumi stack select common
+        run: pulumi stack select CW-Infra/common
 
       # Step 5: Pulumi Preview for pull requests
       - name: Pulumi Preview
