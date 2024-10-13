@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mysql-app
+  name: mysql-app-prod
   namespace: argocd
 spec:
   destination:
-    namespace: dev
+    namespace: prod
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/AhmetKutlu/NodeExpress-MySQL.git
-    targetRevision: HEAD
-    path: application/mysql
+    repoURL: https://github.com/AhmetKutlu/PulumiAKS-NodeExpress.git
+    targetRevision: main
+    path: argo-cd-apps/mysql
   project: default
   syncPolicy:
     automated:
