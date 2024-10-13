@@ -114,7 +114,7 @@ dev_node_pool = containerservice.AgentPool(
     max_count=max_count_dev,
     agent_pool_name="devpool",
     vnet_subnet_id=dev_subnet.id,  # Use the development subnet
-    node_labels = {"environment": "dev", "test": "test"},
+    node_labels = {"environment": "dev"},
     node_taints = [f"environment=dev:NoExecute"],
 )
 
