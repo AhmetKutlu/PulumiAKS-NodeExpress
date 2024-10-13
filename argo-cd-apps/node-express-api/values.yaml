@@ -14,7 +14,7 @@ image:
   tag: latest
 
 environmentVariables:
-  dbHost: "cw-mysql"
+  dbHost: "mysql-app-dev"
   dbUser: "root"
   dbPassword: "JG4OUEGWir"
   dbName: "testdb"
