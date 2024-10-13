@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true })); /* bodyParser.urlencoded() is d
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Ahmet's application." });
+  res.json({ message: "Welcome to Ahmet's dev3 application." });
 });
 
 require("./app/routes/tutorial.routes.js")(app);
