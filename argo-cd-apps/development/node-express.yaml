@@ -6,6 +6,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: nodeexpressimage=ahmetkutlu/cwnodeexpress:dev
     argocd-image-updater.argoproj.io/nodeexpressimage.update-strategy: latest
+    argocd-image-updater.argoproj.io/nodeexpressimage.allow-tags: regexp:^dev-[0-9a-zA-Z]+$
     notifications.argoproj.io/subscriptions: |
       - trigger: [on-sync-running, on-sync-succeeded]
         destinations:
