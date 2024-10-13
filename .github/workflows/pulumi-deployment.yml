@@ -19,10 +19,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 3: Configure Pulumi (setup credentials)
+      # Step 2: Configure Pulumi (setup credentials)
       - name: Set Pulumi Access Token
         run: echo "PULUMI_ACCESS_TOKEN=${{ secrets.PULUMI_ACCESS_TOKEN }}" >> $GITHUB_ENV
 
+      # Step 3: Pulumi Login
       - name: Pulumi Login
         run: pulumi login
 
