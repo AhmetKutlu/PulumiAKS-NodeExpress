@@ -1,0 +1,45 @@
+name: Pulumi Deployment Workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - infra
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - infra
+
+jobs:
+  pulumi-deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Install dependencies
+      - name: Install dependencies
+        run: pip install -r infra/requirements.txt
+
+      # Step 3: Configure Pulumi (setup credentials)
+      - name: Set Pulumi Access Token
+        run: echo "PULUMI_ACCESS_TOKEN=${{ secrets.PULUMI_ACCESS_TOKEN }}" >> $GITHUB_ENV
+
+      # Step 4: Select the Pulumi stack
+      - name: Select Pulumi Stack
+        run: pulumi stack select common
+
+      # Step 5: Pulumi Preview for pull requests
+      - name: Pulumi Preview
+        if: github.event_name == 'pull_request'
+        run: pulumi preview
+
+      # Step 6: Pulumi Up for pushes
+      - name: Pulumi Up
+        if: github.event_name == 'push'
+        run: pulumi up --yes
