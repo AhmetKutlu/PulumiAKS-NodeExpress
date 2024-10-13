@@ -16,7 +16,7 @@ image:
 environmentVariables:
   dbHost: "mysql-app-dev"
   dbUser: "root"
-  dbPassword: "JG4OUEGWir"
+  dbPassword: "123456"
   dbName: "testdb"
   dbPort: "3306"
 
