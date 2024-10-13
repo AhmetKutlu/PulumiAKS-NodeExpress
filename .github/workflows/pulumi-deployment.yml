@@ -33,13 +33,16 @@ jobs:
       # Step 4: Select the Pulumi stack
       - name: Select Pulumi Stack
         run: pulumi stack select AhmetKutlu/CW-Infra/common
+        working-directory: infra
 
       # Step 5: Pulumi Preview for pull requests
       - name: Pulumi Preview
         if: github.event_name == 'pull_request'
         run: pulumi preview
+        working-directory: infra
 
       # Step 6: Pulumi Up for pushes
       - name: Pulumi Up
         if: github.event_name == 'push'
         run: pulumi up --yes
+        working-directory: infra
