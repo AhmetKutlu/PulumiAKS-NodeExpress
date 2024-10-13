@@ -19,10 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Install dependencies
-      - name: Install dependencies
-        run: pip install -r infra/requirements.txt
-
       # Step 3: Configure Pulumi (setup credentials)
       - name: Set Pulumi Access Token
         run: echo "PULUMI_ACCESS_TOKEN=${{ secrets.PULUMI_ACCESS_TOKEN }}" >> $GITHUB_ENV
