@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mysql-app-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: dev
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/AhmetKutlu/NodeExpress-MySQL.git
+    targetRevision: HEAD
+    path: argo-cd-apps/mysql
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

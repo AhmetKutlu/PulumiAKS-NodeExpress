@@ -1,0 +1,8 @@
+node_modules
+mysql
+.env
+.gitignore
+docker-compose.yml
+Dockerfile
+package-lock.json
+README.md

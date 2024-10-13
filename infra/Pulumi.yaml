@@ -1,0 +1,11 @@
+name: CW-Infra
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+description: CW IaC
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: https://www.pulumi.com/ai/api/project/a1bbc434-278e-4116-91a3-ca911d28ff1e.zip

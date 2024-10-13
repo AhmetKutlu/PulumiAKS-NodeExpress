@@ -1,0 +1,25 @@
+config:
+  azure-native:clientId: 30e4af03-17bf-4510-b8f6-6674b8022ab3
+  azure-native:clientSecret:
+    secure: AAABACkHcIbR0QsdsnPzx4xfTGuy35i6GGDsPvtyNB2etZbfiwVNoLHDsS8c+uDEIpjIQjWKIgEorqHRMyJXM7K441J/2yxm
+  azure-native:subscriptionId: 6f41d85d-e8e3-4b42-aee3-205408d7dbd8
+  azure-native:tenantId: 6e1cd03a-54b7-4e49-9bd1-381cd8b93b2f
+  CW-Infra:location: SwedenCentral
+  CW-Infra:resourceGroupName: RG-CWY
+  CW-Infra:vnetCidr: 10.0.0.0/16
+  CW-Infra:systemSubnetCidr: 10.0.0.0/24
+  CW-Infra:devSubnetCidr: 10.0.1.0/24
+  CW-Infra:stagingSubnetCidr: 10.0.2.0/24
+  CW-Infra:prodSubnetCidr: 10.0.3.0/24
+  CW-Infra:devNodePoolVMSize: Standard_D4s_v3
+  CW-Infra:nodeCountDev: "1"
+  CW-Infra:minCountDev: "1"
+  CW-Infra:maxCountDev: "1"
+  CW-Infra:prodNodePoolVMSize: Standard_D4s_v3
+  CW-Infra:stagingNodePoolVMSize: Standard_D4s_v3
+  CW-Infra:nodeCountStaging: "1"
+  CW-Infra:minCountStaging: "1"
+  CW-Infra:maxCountStaging: "1"
+  CW-Infra:nodeCountProd: "1"
+  CW-Infra:minCountProd: "1"
+  CW-Infra:maxCountProd: "1"

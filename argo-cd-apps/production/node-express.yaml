@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: node-express-app
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: nodeexpressimage=ahmetkutlu/cwnodeexpress
+    argocd-image-updater.argoproj.io/nodeexpressimage.update-strategy: latest
+    notifications.argoproj.io/subscriptions: |
+      - trigger: [on-sync-running, on-sync-succeeded]
+        destinations:
+          - service: slack
+            recipients: [a-project]
+
+spec:
+  destination:
+    namespace: dev
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/AhmetKutlu/NodeExpress-MySQL.git
+    targetRevision: HEAD
+    path: application/node-express-api
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
