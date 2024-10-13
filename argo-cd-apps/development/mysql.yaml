@@ -8,8 +8,8 @@ spec:
     namespace: dev
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/AhmetKutlu/NodeExpress-MySQL.git
-    targetRevision: HEAD
+    repoURL: https://github.com/AhmetKutlu/PulumiAKS-NodeExpress.git
+    targetRevision: dev
     path: argo-cd-apps/mysql
   project: default
   syncPolicy:
