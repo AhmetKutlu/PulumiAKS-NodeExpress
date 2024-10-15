@@ -47,6 +47,8 @@ spec:
               value: {{ .Values.environmentVariables.dbName | quote }}
             - name: DB_PORT
               value: {{ .Values.environmentVariables.dbPort | quote }}
+            - name: PORT
+              value: {{ .Values.environmentVariables.nodePort | quote }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
